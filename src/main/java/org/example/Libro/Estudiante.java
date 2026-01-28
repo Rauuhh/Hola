@@ -1,5 +1,7 @@
 package org.example.Libro;
 
+import java.util.ArrayList;
+
 public class Estudiante {
 
     private static int contadorEstudiantes;
@@ -9,14 +11,14 @@ public class Estudiante {
     private String curso;
     private int nia;
     private String email;
-    private Libro libro;
+    private ArrayList<Libro> listalibro;
 
     public Estudiante(String nombre, String curso, String email) {
         this.nombre = nombre;
         this.curso = curso;
         this.email = email;
         nia = ++contadorEstudiantes;
-        libro = null;
+        listalibro = new ArrayList<>();
     }
 
     public Estudiante(String nombre) {
@@ -38,6 +40,14 @@ public class Estudiante {
         return false;
     }
 
+    public void insertarLibro(Libro libro){
+        listalibro.add(libro);
+    }
+
+
+    public void borrarLibro(Libro libro){
+        listalibro.remove(libro);
+    }
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -65,12 +75,8 @@ public class Estudiante {
     private void setNia(int nia) {
         this.nia = nia;
     }
-    public Libro getLibro() {
-        return libro;
-    }
-
-    public void setLibro(Libro libro) {
-        this.libro = libro;
+    public ArrayList<Libro> getListaLibro() {
+        return listalibro;
     }
 
     @Override
@@ -80,7 +86,6 @@ public class Estudiante {
                 ", curso='" + curso + '\'' +
                 ", nia=" + nia +
                 ", email='" + email + '\'' +
-                ", Libro='" + libro.getTitulo() + '\''+
                 '}';
     }
 }
