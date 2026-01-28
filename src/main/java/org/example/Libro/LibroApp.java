@@ -8,7 +8,6 @@ public class LibroApp {
         Estudiante jorge = new Estudiante("jorge");
         Editorial editorial = new Editorial("Satillana", "España");
         Libro divina_comedia = new Libro("Hola","Adios",editorial);
-        divina_comedia.prestar(jorge);
         System.out.println(Libro.getLibrosDisponibles());
 
 
@@ -16,7 +15,7 @@ public class LibroApp {
 
         System.out.println("Fecha prestado " +  p1.getFecha());
 
-
+        System.out.println(jorge.getListaLibro());
 
 
 
