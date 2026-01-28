@@ -21,10 +21,11 @@ public class Libro {
         this.disponible = true;
         estudiantePrestado = new Estudiante("");
         this.editorial = editorial;
+        editorial.anyadirLibro(this);
     }
 
     public void calcularId(){
-      this.id = LIBRO + cantidadLibros;
+        this.id = LIBRO + cantidadLibros;
     }
 
 
@@ -32,28 +33,31 @@ public class Libro {
 
         Prestamo prestamo = null;
 
-        if (disponible){
+        if (!estudiante.getListaLibro().contains(this) && disponible){
             System.out.println("El libro " + titulo + " ha sido prestado con exito a " + estudiante.getNombre());
             librosDisponibles--;
             disponible = false;
             estudiantePrestado = estudiante;
-            estudiante.setLibro(this);
+            estudiante.insertarLibro(this);
             prestamo = new Prestamo(this,estudiante);
             System.out.println("Prestamo relaizado con exito");
-        }else{
+        }else if (estudiante.getListaLibro().contains(this)){
+            System.out.println("El estudiamte " + estudiante.getNombre() + " ya tiene libro");
+        }
+        else{
             System.out.println("El libro ya ha sido prestado");
         }
         return prestamo;
     }
 
     public void devolver(){
-        if (!disponible && estudiantePrestado.getLibro() == null){
+        if (!disponible && estudiantePrestado.getListaLibro() == null){
             System.out.println("El libro " + titulo + " ha sido devuelto con exito");
             librosDisponibles++;
             disponible = true;
-            estudiantePrestado.setLibro(null);
+            estudiantePrestado.borrarLibro(null);
             estudiantePrestado = null;
-        } else if (estudiantePrestado.getLibro() != null) {
+        } else if (estudiantePrestado.getListaLibro() != null) {
             System.out.println("El estudiante " + estudiantePrestado.getNombre() + " ya tiene un libro prestado");
         } else{
             System.out.println("El libro no se puede devolver");
