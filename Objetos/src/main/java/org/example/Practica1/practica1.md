@@ -11,6 +11,7 @@
 > La practica consiste en ver que programa de television tiene mas espectadores
 ### 2. Estructura de clases
 - Diagrama de clases UML
+- ()
 - Codigo de PlantUML
 - Contenido de las clases (.java)
 ### 3. Programa Principal
