@@ -12,4 +12,28 @@ public class Cadena {
         this.nombre = nombre;
         listaProgramas = new ArrayList<>();
     }
+
+    public void anadirPrograma (Programa nombre){
+        listaProgramas.add(nombre);
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public ArrayList<Programa> getListaProgramas() {
+        return listaProgramas;
+    }
+
+    @Override
+    public String toString() {
+        return "Cadena{" +
+                "nombre='" + nombre + '\'' +
+                ", listaProgramas=" + listaProgramas +
+                '}';
+    }
 }
