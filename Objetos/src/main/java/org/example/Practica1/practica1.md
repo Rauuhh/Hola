@@ -11,7 +11,7 @@
 > La practica consiste en ver que programa de television tiene mas espectadores
 ### 2. Estructura de clases
 - Diagrama de clases UML
-![](img/biblioPuml.png)
+![](Foto.png)
 - Codigo de PlantUML
   <code>
   @startuml
