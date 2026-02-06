@@ -131,5 +131,6 @@ public class AppProgramas {
 }
 ```
 ### 4. Pruebas
-
+![](Prueba1.png)
+![](Prueba2.png)
 ### 5. Entrega
