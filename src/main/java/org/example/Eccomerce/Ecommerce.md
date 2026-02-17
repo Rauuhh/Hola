@@ -317,5 +317,8 @@ public class Tienda {
 
 ````
 
+#PUML
+![Foto](src/main/java/org/example/Eccomerce/Ecommerce.puml)
+
 
 
